@@ -7,12 +7,7 @@
             [util.editor :as editor-utils]))
 
 
-(defn info [& xs]
-  (vscode/window.showInformationMessage (str/join " " xs)))
-
-
 (def root-path (-> (first vscode/workspace.workspaceFolders) .-uri .-fsPath))
-(info "The root path of this workspace:" root-path)
 
 
 (defn write-to-file [path content]
